@@ -302,21 +302,8 @@
         document.body.appendChild(box);
     }
 
-    function initAds() {
-        // Se activa solo cuando reemplazas el ID de ejemplo en la etiqueta <meta name="google-adsense-account">.
-        var meta = document.querySelector('meta[name="google-adsense-account"]');
-        var id = meta ? meta.getAttribute('content') : '';
-        if (!/^ca-pub-\d{10,20}$/.test(id)) return;
-        var s = document.createElement('script');
-        s.async = true;
-        s.crossOrigin = 'anonymous';
-        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(id);
-        document.head.appendChild(s);
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
         initForms();
         initCookieNotice();
-        initAds();
     });
 })();
